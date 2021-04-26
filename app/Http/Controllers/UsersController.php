@@ -9,6 +9,14 @@ use Illuminate\Http\Request;
 
 class UsersController extends Controller
 {
+    // 限制游客登录
+    public function __construct()
+    {
+        $this->middleware('auth', [
+            'except' => ['show', 'create', 'store']
+        ]);
+    }
+
     // 个人页面
     public function show(User $user)
     {
@@ -18,13 +26,14 @@ class UsersController extends Controller
     // 编辑页面
     public function edit(User $user)
     {
-
+        $this->authorize('update', $user);
         return view('users.edit', compact('user'));
     }
 
     //保存修改
     public function update(UserRequest $request, ImageUploadHandler $uploader, User $user)
     {
+        $this->authorize('update', $user);
         $data  = $request->all();
 
         if ($request->avatar) {
