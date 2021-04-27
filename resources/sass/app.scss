@@ -1,14 +1,14 @@
 // Variables
-@import 'variables';
+@import "variables";
 
 // Bootstrap
-@import '~bootstrap/scss/bootstrap';
+@import "~bootstrap/scss/bootstrap";
 
 // Fontawesome
-@import '~@fortawesome/fontawesome-free/scss/fontawesome';
-@import '~@fortawesome/fontawesome-free/scss/regular';
-@import '~@fortawesome/fontawesome-free/scss/solid';
-@import '~@fortawesome/fontawesome-free/scss/brands';
+@import "~@fortawesome/fontawesome-free/scss/fontawesome";
+@import "~@fortawesome/fontawesome-free/scss/regular";
+@import "~@fortawesome/fontawesome-free/scss/solid";
+@import "~@fortawesome/fontawesome-free/scss/brands";
 
 /* universal */
 
@@ -74,9 +74,10 @@ body {
 }
 
 /* Topic Index Page */
-.topics-index-page, .categories-show-page {
+.topics-index-page,
+.categories-show-page {
   .topic-list {
-    .nav>li>a {
+    .nav > li > a {
       position: relative;
       display: block;
       padding: 5px 14px;
@@ -109,13 +110,12 @@ body {
   }
 }
 
-
 /* Add container and footer space */
 #app > div.container {
   margin-bottom: 100px;
 }
 
-.simditor-body img{
+.simditor-body img {
   max-width: 100%;
 }
 
@@ -124,28 +124,48 @@ body {
 @import "topic_body";
 
 .topics-show-page {
+  .card {
+    padding: 15px;
 
-    .card {
-        padding: 15px;
-
-        h1 {
-            margin: 0.4em auto 0.6em;
-            font-size: 28px;
-            line-height: 38px;
-        }
+    h1 {
+      margin: 0.4em auto 0.6em;
+      font-size: 28px;
+      line-height: 38px;
     }
+  }
 }
-
 
 /* 回复列表 */
 
 .topic-reply {
   a {
-      color: inherit;
+    color: inherit;
   }
 
   .meta {
-      font-size: .9em;
-      color: #b3b3b3;
+    font-size: 0.9em;
+    color: #b3b3b3;
+  }
+}
+
+/* 消息通知 */
+.notification-badge {
+  .badge {
+    font-size: 12px;
+    margin-top: 14px;
+  }
+
+  i,
+  .badge-far {
+    width: 18px;
+    font-size: 18px;
+  }
+
+  .badge-secondary {
+    background-color: #ebe8e8;
+  }
+
+  .badge-hint {
+    background-color: #d15b47 !important;
   }
 }

@@ -37,6 +37,15 @@
                         </a>
                     </li>
 
+
+                    <li class="nav-item notification-badge">
+                      <i class="far fa-bell"></i>
+                        <a class="nav-link mr-3 badge badge-pill badge-{{ Auth::user()->notification_count > 0 ? 'hint' : 'secondary' }} text-white"
+                            href="{{ route('notifications.index') }}">
+                            {{ Auth::user()->notification_count }}
+                        </a>
+                    </li>
+
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
                             data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
